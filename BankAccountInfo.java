@@ -72,9 +72,23 @@ public class BankAccountInfo {
 		this.accountBalance = accountBalance;
 	}
 
-	/**
-	 * 
-	 * @param accountAmount
-	 * @return
-	 */
+	public double depositAmount(double accountAmount) {
+		if (accountAmount >= 0) {
+			accountBalance += accountAmount;
+			System.out.println("$" + accountAmount + " deposited sucessfully deposited to your account");
+		} else {
+			System.out.println("Please enter a positive dollar amount. Please try again.");
+		}
+		return accountAmount;
+	}
+
+	public double withdrawAccount(double accountAmount) {
+		if (accountAmount > 0 && accountAmount <= accountBalance) {
+			accountBalance -= accountAmount;
+			System.out.println("$" + accountAmount + " withdrawn from your account");
+		} else {
+			System.out.println("Insignificant funds. Please refer back to our menu.");
+		}
+		return accountAmount;
+	}
 }
