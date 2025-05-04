@@ -1,4 +1,15 @@
-package BankAccountInformation;
+/**
+ * File name: BankAccountInfo.java
+ * Last Updated: 12/02/24
+ * Purpose: This class contains accessors and mutators for information hiding and 
+ * functions for depositing funds from and withdrawing funds from the users bank account.
+ */
+
+/**
+ * @author Jesse Proulx
+ * @version 4.34.0
+ * @since JDK 23.0.1
+ */
 
 public class BankAccountInfo {
 
@@ -58,20 +69,33 @@ public class BankAccountInfo {
 
 	/**
 	 * Setter/Mutator of the account holder's name
-	 * @param accountHolder The a
+	 * @param accountHolder The account holders name
 	 */
 	public void setAccountHolder(String accountHolder) {
 		this.accountHolder = accountHolder;
 	}
 
+	/**
+	 * Getter/Accessor of the Account Balance
+	 * @return The account holders balance
+	 */
 	public double getAccountBalance() {
 		return accountBalance;
 	}
 
+	/**
+	 * Setter/Mutator of the Account Balance
+	 * @param accountBalance the account balance of the user
+	 */
 	public void setAccountBalance(double accountBalance) {
 		this.accountBalance = accountBalance;
 	}
 
+	/**
+	 * Function to deposit money in the users account
+	 * @param accountAmount the amount of money in the users account
+	 * @return the amount in the users account
+	 */
 	public double depositAmount(double accountAmount) {
 		if (accountAmount >= 0) {
 			accountBalance += accountAmount;
@@ -82,6 +106,11 @@ public class BankAccountInfo {
 		return accountAmount;
 	}
 
+	/**
+	 * Function to withdraw money from the users account
+	 * @param accountAmount the amount of money in the users account
+	 * @return the amount in the users account
+	 */
 	public double withdrawAccount(double accountAmount) {
 		if (accountAmount > 0 && accountAmount <= accountBalance) {
 			accountBalance -= accountAmount;
@@ -91,4 +120,5 @@ public class BankAccountInfo {
 		}
 		return accountAmount;
 	}
+
 }
